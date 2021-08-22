@@ -1,4 +1,12 @@
-rolls: 25
+config:
+    rolls: 25
+    
+    ERThreshold?: true #Will distribute rolls to achieve the set threshold
+    ERThreshold: 1.8 #150% = 1.5
+    
+    EMReactionMultiplier: 1.5 #1.5 for reverse melt/vape, 2 for melt/vape
+    ReactionRatio: 0.67
+    ReactionBonus: 0.15 #like 4p CW set bonus
 
 character: 
     ATK: 349
