@@ -4,6 +4,7 @@ config:
     ERThreshold?: true #Will distribute rolls to achieve the set threshold
     ERThreshold: 1.8 #150% = 1.5
     
+    
     EMReactionMultiplier: 1.5 #1.5 for reverse melt/vape, 2 for melt/vape
     ReactionRatio: 0.67
     ReactionBonus: 0.15 #like 4p CW set bonus
@@ -63,4 +64,9 @@ artifactMainStats:
     CryoDMG: 0.4659999907
     PhysicalDMG: 0.5830000043
     
-    
+artifactSubStatRolls:
+    ATKPercent: 0.0582999996840954
+    CritRate: 0.0388999991118908
+    CritDMG: 0.0776999965310097
+    EnergyRecharge: 0.064800001680851
+    EM: 23.3099994659424

@@ -7,11 +7,12 @@ def read_yaml(file_path):
 
 configFileName = "BOconfigSimplified.yaml"
 
-rolls = read_yaml(configFileName)["rolls"]
+config = read_yaml(configFileName)["config"]
 character = read_yaml(configFileName)["character"]
 weapon = read_yaml(configFileName)["weapon"]
 artifactMainStatChoice = read_yaml(configFileName)["artifactMainStatChoice"]
 artifactMainStats = read_yaml(configFileName)["artifactMainStats"]
+artifactSubStatRolls = read_yaml(configFileName)["artifactSubStatRolls"]
 
 
 def baseStatCombine(key):
