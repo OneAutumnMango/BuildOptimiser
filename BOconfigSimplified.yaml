@@ -1,5 +1,5 @@
 config:
-    rolls: 70
+    rolls: 25
     
     ERThreshold?: true #Will distribute rolls to achieve the set threshold
     ERThreshold: 1.2 #150% = 1.5
@@ -36,14 +36,17 @@ weapon:
     CritDMG: 0.0
     EM: 0
     EnergyRecharge: 0.0
-    
-    
-artifactMainStatChoice:
+
+buffs:
+    FlatATK: 1000 #you can put bennett's buff here
+
+artifactMainStatChoice: #copy the names from artifactMainStats
     sands: ATKPercent
     goblet: AnemoDMG
     circlet: CritDMG
     
-artifactMainStats:
+    
+artifactMainStats: #leave these two untouched
     HP: 4780
     HPPercent: 0.4659999907
     ATK: 311

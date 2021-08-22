@@ -14,6 +14,7 @@ weapon = read_yaml(configFileName)["weapon"]
 artifactMainStatChoice = read_yaml(configFileName)["artifactMainStatChoice"]
 artifactMainStats = read_yaml(configFileName)["artifactMainStats"]
 artifactSubStatRolls = read_yaml(configFileName)["artifactSubStatRolls"]
+buffs = read_yaml(configFileName)["buffs"]
 
 
 def baseStatCombine(key):
@@ -84,7 +85,7 @@ def optimiseRolls(rolls):
                 
                 #DMGValues[(baseAtk*(1+baseATKPercent+ATKRolls*maxATKRoll)] = [ATKRolls, CRRolls, CDRolls, EMRolls]
                 
-                ATK = baseATK * (1 + baseATKPercent + ATKRolls * maxATKRoll) + artifactMainStats["ATK"]
+                ATK = baseATK * (1 + baseATKPercent + ATKRolls * maxATKRoll) + artifactMainStats["ATK"] + buffs["FlatATK"]
                 CR = baseCritRate + CRRolls * maxCRRoll
                 if CR > 1: CR = 1
                 CritMult = 1 + CR * (baseCritDMG + CDRolls * maxCDRoll)
@@ -102,7 +103,7 @@ optimisedRolls = optimiseRolls(rolls)
 
 ATKRolls = optimisedRolls[1][0]
 ATKPercent = round(baseATKPercent + ATKRolls * maxATKRoll,4)
-ATK = round(baseATK * (1 + baseATKPercent + ATKRolls * maxATKRoll) + artifactMainStats["ATK"],2)
+ATK = round(baseATK * (1 + baseATKPercent + ATKRolls * maxATKRoll) + artifactMainStats["ATK"] + buffs["FlatATK"],2)
 
 CRRolls = optimisedRolls[1][1]
 CR = int((baseCritRate + CRRolls * maxCRRoll)*10000)/10000
