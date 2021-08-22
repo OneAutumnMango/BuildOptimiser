@@ -1,12 +1,12 @@
 config:
-    rolls: 25
+    rolls: 70
     
     ERThreshold?: true #Will distribute rolls to achieve the set threshold
-    ERThreshold: 1.8 #150% = 1.5
+    ERThreshold: 1.2 #150% = 1.5
     
     
     EMReactionMultiplier: 1.5 #1.5 for reverse melt/vape, 2 for melt/vape
-    ReactionRatio: 0.67
+    ReactionRatio: 0.0 #0 for no reactions
     ReactionBonus: 0.15 #like 4p CW set bonus
 
 character: 
@@ -35,12 +35,10 @@ weapon:
     CritRate: 0.2205
     CritDMG: 0.0
     EM: 0
-    EnergyRecharge: 1.0
+    EnergyRecharge: 0.0
     
     
 artifactMainStatChoice:
-    flower: HP
-    feather: ATK
     sands: ATKPercent
     goblet: AnemoDMG
     circlet: CritDMG
