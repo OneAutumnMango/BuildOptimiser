@@ -1,0 +1,58 @@
+rolls: 25
+
+character: 
+    ATK: 349
+    HP: 12736
+    DEF: 799
+    
+    ATKPercent: 0.0
+    HPPercent: 0.0
+    DEFPercent: 0.0
+    
+    CritRate: 0.242
+    CritDMG: 0.5
+    EM: 0
+    EnergyRecharge: 1.0
+    
+weapon: 
+    ATK: 674
+    HP: 0
+    DEF: 0
+    
+    ATKPercent: 0.224
+    HPPercent: 0.0
+    DEFPercent: 0.0
+    
+    CritRate: 0.2205
+    CritDMG: 0.0
+    EM: 0
+    EnergyRecharge: 1.0
+    
+    
+artifactMainStatChoice:
+    flower: HP
+    feather: ATK
+    sands: ATKPercent
+    goblet: AnemoDMG
+    circlet: CritDMG
+    
+artifactMainStats:
+    HP: 4780
+    HPPercent: 0.4659999907
+    ATK: 311
+    ATKPercent: 0.4659999907
+    DEFPercent: 0.5830000043
+    CritRate: 0.3109999895
+    CritDMG: 0.621999979
+    EnergyRecharge: 0.5180000067
+    HealingBonus: 0.3589999974
+    EM: 186.5
+    AnemoDMG: 0.4659999907
+    GeoDMG: 0.4659999907
+    ElectroDMG: 0.4659999907
+    HydroDMG: 0.4659999907
+    PyroDMG: 0.4659999907
+    CryoDMG: 0.4659999907
+    PhysicalDMG: 0.5830000043
+    
+    
