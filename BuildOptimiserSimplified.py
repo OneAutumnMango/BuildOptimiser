@@ -21,7 +21,7 @@ def baseStatCombine(key):
     artifactBonus = 0
     for type in ["sands","goblet","circlet"]:
         if artifactMainStatChoice[type] == key:
-            artifactBonus = artifactMainStats[artifactMainStatChoice[type]]
+            artifactBonus += artifactMainStats[artifactMainStatChoice[type]]
     
     return character[key]+weapon[key]+artifactBonus
 
