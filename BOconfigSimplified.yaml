@@ -1,5 +1,5 @@
 config:
-    rolls: 25
+    rolls: 15
     
     ERThreshold?: true #Will distribute rolls to achieve the set threshold
     ERThreshold: 1.2 #150% = 1.5
@@ -18,7 +18,7 @@ character:
     HPPercent: 0.0
     DEFPercent: 0.0
     
-    CritRate: 0.242
+    CritRate: 0.242 #inlcude the base 5% CR and 50% CD here
     CritDMG: 0.5
     EM: 0
     EnergyRecharge: 1.0
