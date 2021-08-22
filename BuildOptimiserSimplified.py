@@ -55,7 +55,7 @@ rolls = config["rolls"]
 if config["ERThreshold?"] == True and config["ERThreshold"] >= baseEnergyRecharge:
     rolls -= math.ceil((config["ERThreshold"]-baseEnergyRecharge)/maxERRoll)
 
-    ERRolls = (config["ERThreshold"]-baseEnergyRecharge)/maxERRoll
+    ERRolls = math.ceil((config["ERThreshold"]-baseEnergyRecharge)/maxERRoll)
     ER = round(math.ceil(ERRolls)*maxERRoll+baseEnergyRecharge,4)
 
 else: 
