@@ -60,7 +60,7 @@ if config["ERThreshold?"] == True and config["ERThreshold"] >= baseEnergyRecharg
 
 else: 
     ERRolls = 0
-    ER = baseEnergyRecharge
+    ER = int(baseEnergyRecharge*10000)/100
 
 
 
@@ -120,13 +120,53 @@ resultantDMGValue = round(optimisedRolls[0],2)
 
 
 print("""
-ATK = %s, %s ATK%%, %d ATK rolls,
-CR = %s%%, %d CR rolls,
-CD = %s%%, %d CD rolls,
-EM = %s, %d EM rolls,
-ER = %s%%, %d ER rolls,
+Ideal Stat Ratio:
 
-Resultant DMG Value = %s
-""" % (ATK,ATKPercent,ATKRolls,CR,CRRolls,CD,CDRolls,EM,EMRolls,ER,ERRolls,resultantDMGValue))
+ATK = %s, %s ATK%%, %d ATK rolls,
+%s%% CR, %d CR rolls,
+%s%% CD, %d CD rolls,
+%s EM, %d EM rolls,
+%s%% ER, %d ER rolls,
+
+Resultant DMG Value = %s""" % (ATK,ATKPercent,ATKRolls,CR,CRRolls,CD,CDRolls,EM,EMRolls,ER,ERRolls,resultantDMGValue))
+
+#Ideal Artifact
+
+def calcOccur(stat):
+    occur = 5
+    for type in ["sands","goblet","circlet"]:
+        if artifactMainStatChoice[type] == stat:
+            occur -= 1
+    return occur
+
+avgATKRolls = round(ATKRolls/calcOccur("ATKPercent"))
+artiATK = int(avgATKRolls*maxATKRoll*10000)/100
+
+avgCRRolls = round(CRRolls/calcOccur("CritRate"))
+artiCR = int(avgCRRolls*maxCRRoll*10000)/100
+
+avgCDRolls = round(CDRolls/calcOccur("CritDMG"))
+artiCD = int(avgCDRolls*maxCDRoll*10000)/100
+
+avgEMRolls = round(EMRolls/calcOccur("EM"))
+artiEM = int(avgEMRolls*maxEMRoll*100)/100
+
+avgERRolls = round(ERRolls/calcOccur("EnergyRecharge"))
+artiER = int(avgERRolls*maxERRoll*10000)/100
+
+
+print("""
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+Sample Requirement per Artifact on Average
+
+%s ATK%%, %d ATK rolls,
+%s%% CR, %d CR rolls,
+%s%% CD, %d CD rolls,
+%s EM, %d EM rolls,
+%s%% ER, %d ER rolls,
+
+""" % (artiATK,avgATKRolls,artiCR,avgCRRolls,artiCD,avgCDRolls,artiEM,avgEMRolls,artiER,avgERRolls))
 
 input("Press Enter to Exit.")
