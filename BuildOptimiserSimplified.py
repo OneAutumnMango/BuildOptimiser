@@ -56,7 +56,7 @@ if config["ERThreshold?"] == True and config["ERThreshold"] >= baseEnergyRecharg
     rolls -= math.ceil((config["ERThreshold"]-baseEnergyRecharge)/maxERRoll)
 
     ERRolls = math.ceil((config["ERThreshold"]-baseEnergyRecharge)/maxERRoll)
-    ER = round(math.ceil(ERRolls)*maxERRoll+baseEnergyRecharge,4)
+    ER = int((math.ceil(ERRolls)*maxERRoll+baseEnergyRecharge)*10000)/100
 
 else: 
     ERRolls = 0
@@ -102,17 +102,17 @@ def optimiseRolls(rolls):
 optimisedRolls = optimiseRolls(rolls)
 
 ATKRolls = optimisedRolls[1][0]
-ATKPercent = round(baseATKPercent + ATKRolls * maxATKRoll,4)
+ATKPercent = int((baseATKPercent + ATKRolls * maxATKRoll)*10000)/100
 ATK = round(baseATK * (1 + baseATKPercent + ATKRolls * maxATKRoll) + artifactMainStats["ATK"] + buffs["FlatATK"],2)
 
 CRRolls = optimisedRolls[1][1]
-CR = int((baseCritRate + CRRolls * maxCRRoll)*10000)/10000
+CR = int((baseCritRate + CRRolls * maxCRRoll)*10000)/100
 
 CDRolls = optimisedRolls[1][2]
-CD = int((baseCritDMG + CDRolls * maxCDRoll)*10000)/10000
+CD = int((baseCritDMG + CDRolls * maxCDRoll)*10000)/100
 
 EMRolls = optimisedRolls[1][3]
-EM = round(baseEM + EMRolls * maxEMRoll,2)
+EM = int((baseEM + EMRolls * maxEMRoll)*100)/100
 
 
 resultantDMGValue = round(optimisedRolls[0],2)
@@ -127,6 +127,6 @@ EM = %s, %d EM rolls,
 ER = %s%%, %d ER rolls,
 
 Resultant DMG Value = %s
-""" % (ATK,ATKPercent*100,ATKRolls,CR*100,CRRolls,CD*100,CDRolls,EM,EMRolls,ER*100,ERRolls,resultantDMGValue))
+""" % (ATK,ATKPercent,ATKRolls,CR,CRRolls,CD,CDRolls,EM,EMRolls,ER,ERRolls,resultantDMGValue))
 
 input("Press Enter to Exit.")
