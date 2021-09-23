@@ -1,7 +1,9 @@
 config:
+    ifRollCountFromConfig: false #if false you will be prompted to input it when the program is run
     rolls: 15
     
-    ERThreshold?: true #Will distribute rolls to achieve the set threshold
+    
+    ERThreshold?: false #Will distribute rolls to achieve the set threshold
     ERThreshold: 1.2 #150% = 1.5
     
     
@@ -10,7 +12,7 @@ config:
     ReactionBonus: 0.15 #like 4p CW set bonus
 
 character: 
-    ATK: 349
+    ATK: 335
     HP: 12736
     DEF: 799
     
@@ -18,31 +20,31 @@ character:
     HPPercent: 0.0
     DEFPercent: 0.0
     
-    CritRate: 0.242 #inlcude the base 5% CR and 50% CD here
-    CritDMG: 0.5
+    CritRate: 0.8 #inlcude the base 5% CR and 50% CD here
+    CritDMG: 0.884
     EM: 0
     EnergyRecharge: 1.0
     
 weapon: 
-    ATK: 674
+    ATK: 608
     HP: 0
     DEF: 0
     
-    ATKPercent: 0.224
+    ATKPercent: 0.496
     HPPercent: 0.0
     DEFPercent: 0.0
     
-    CritRate: 0.2205
+    CritRate: 0.0
     CritDMG: 0.0
     EM: 0
     EnergyRecharge: 0.0
 
 buffs:
-    FlatATK: 1000 #you can put bennett's buff here
+    FlatATK: 0 #you can put bennett's buff here
 
 artifactMainStatChoice: #copy the names from artifactMainStats
     sands: ATKPercent
-    goblet: AnemoDMG
+    goblet: CryoDMG
     circlet: CritDMG
     
     

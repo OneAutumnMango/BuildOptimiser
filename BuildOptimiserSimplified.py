@@ -50,7 +50,10 @@ reactionMultiplier = config["EMReactionMultiplier"]
 reactionRatio = config["ReactionRatio"]
 reactionBonus = config["ReactionBonus"]
 
-rolls = config["rolls"]
+if config["ifRollCountFromConfig"] == True:
+    rolls = config["rolls"]
+else: 
+    rolls = int(input("\nHow many rolls would you like to optimiser for? "))
 
 if config["ERThreshold?"] == True and config["ERThreshold"] >= baseEnergyRecharge:
     rolls -= math.ceil((config["ERThreshold"]-baseEnergyRecharge)/maxERRoll)
@@ -119,7 +122,7 @@ resultantDMGValue = round(optimisedRolls[0],2)
 
 
 
-print("""
+print("""\n
 Ideal Stat Ratio:
 
 ATK = %s, %s ATK%%, %d ATK rolls,
@@ -168,5 +171,17 @@ Sample Requirement per Artifact on Average
 %s%% ER, %d ER rolls,
 
 """ % (artiATK,avgATKRolls,artiCR,avgCRRolls,artiCD,avgCDRolls,artiEM,avgEMRolls,artiER,avgERRolls))
+
+print("""
+Ideal Stat Ratio:
+
+%s
+%s%%
+%s%% 
+%s%%
+
+
+Resultant DMG Value = %s""" % (ATK,ATKPercent,CR,CD,resultantDMGValue))
+
 
 input("Press Enter to Exit.")
